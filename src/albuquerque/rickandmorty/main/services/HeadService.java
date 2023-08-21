@@ -1,10 +1,10 @@
 package albuquerque.rickandmorty.main.services;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.google.gson.*;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class HeadService {
@@ -30,6 +30,16 @@ public abstract class HeadService {
             e.getMessage();
             e.getCause();
         }
+    }
+
+    protected <T> List<T> mountList(String json, Class<T> elementType) {
+        List<T> itemList = new ArrayList<>();
+        JsonArray resultsArray = gson.fromJson(json, JsonObject.class).getAsJsonArray("results");
+        for (JsonElement result : resultsArray) {
+            T newItem = gson.fromJson(result, elementType);
+            itemList.add(newItem);
+        }
+        return itemList;
     }
 
     protected abstract String getFileName();
