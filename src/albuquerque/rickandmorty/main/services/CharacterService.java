@@ -41,7 +41,7 @@ public class CharacterService {
                 System.out.println("Status: " + character.getStatus());
                 System.out.println("Imagem: " + character.getImage());
             }
-
+            System.out.println("Um arquivo foi gerado contendo todas as informacoes.");
             writer.close();
         } catch (IOException e) {
             e.getMessage();

@@ -34,6 +34,7 @@ public class LocationsService {
                 System.out.println("Url: " + location.getUrl());
                 System.out.println("#################################");
             }
+            System.out.println("Um arquivo foi gerado contendo todas as informacoes.");
             writer.close();
         } catch (IOException e) {
             e.getMessage();
