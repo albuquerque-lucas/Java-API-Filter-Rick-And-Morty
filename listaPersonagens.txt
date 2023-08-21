@@ -1,0 +1,6 @@
+Nome: Rick Sanchez
+Especie: Human
+Genero: Male
+Status: Alive
+Imagem: https://rickandmortyapi.com/api/character/avatar/1.jpeg
+#################################

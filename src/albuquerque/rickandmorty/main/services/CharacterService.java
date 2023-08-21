@@ -1,17 +1,16 @@
 package albuquerque.rickandmorty.main.services;
 
 import albuquerque.rickandmorty.main.models.Character;
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
+import com.google.gson.*;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class CharacterService {
-    
+    private final Gson gsonWithPrettyPrinting = new GsonBuilder().setPrettyPrinting().create();
     private final Gson gson = new Gson();
     public List<Character> mountList(String json) {
         List<Character> characterList = new ArrayList<>();
@@ -31,15 +30,25 @@ public class CharacterService {
         return characterList;
     }
     public void displayAll(List<Character> characterList) {
-        for (Character character : characterList) {
-            System.out.println("Nome: " + character.getName());
-            System.out.println("Especie: " + character.getSpecies());
-            System.out.println("Genero: " + character.getGender());
-            System.out.println("Status: " + character.getStatus());
-            System.out.println("Imagem: " + character.getImage());
-            System.out.println("#################################");
+        try {
+            FileWriter writer = new FileWriter("listaPersonagens.json");
+            String json = gsonWithPrettyPrinting.toJson(characterList);
+            writer.write(json);
+            for (Character character : characterList) {
+                System.out.println("Nome: " + character.getName());
+                System.out.println("Especie: " + character.getSpecies());
+                System.out.println("Genero: " + character.getGender());
+                System.out.println("Status: " + character.getStatus());
+                System.out.println("Imagem: " + character.getImage());
+            }
+
+            writer.close();
+        } catch (IOException e) {
+            e.getMessage();
+            e.getCause();
         }
     }
+
 
     private Character getNewCharacter(JsonElement result) {
         JsonObject character = result.getAsJsonObject();

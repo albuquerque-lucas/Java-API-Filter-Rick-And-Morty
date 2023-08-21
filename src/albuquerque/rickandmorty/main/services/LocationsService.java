@@ -1,15 +1,15 @@
 package albuquerque.rickandmorty.main.services;
 
 import albuquerque.rickandmorty.main.models.Location;
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
+import com.google.gson.*;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class LocationsService {
+    private final Gson gsonWithPrettyPrinting = new GsonBuilder().setPrettyPrinting().create();
     private final Gson gson = new Gson();
     public List<Location> mountList(String json) {
         List<Location> locationList = new ArrayList<>();
@@ -23,12 +23,21 @@ public class LocationsService {
     }
 
     public void displayAll(List<Location> locationList) {
-        for (Location location : locationList) {
-            System.out.println("Nome: " + location.getName());
-            System.out.println("Tipo: " + location.getType());
-            System.out.println("Dimensao: " + location.getDimension());
-            System.out.println("Url: " + location.getUrl());
-            System.out.println("#################################");
+        try {
+            FileWriter writer = new FileWriter("listaLocalizacoes.json");
+            String json = gsonWithPrettyPrinting.toJson(locationList);
+            writer.write(json);
+            for (Location location : locationList) {
+                System.out.println("Nome: " + location.getName());
+                System.out.println("Tipo: " + location.getType());
+                System.out.println("Dimensao: " + location.getDimension());
+                System.out.println("Url: " + location.getUrl());
+                System.out.println("#################################");
+            }
+            writer.close();
+        } catch (IOException e) {
+            e.getMessage();
+            e.getCause();
         }
     }
 
