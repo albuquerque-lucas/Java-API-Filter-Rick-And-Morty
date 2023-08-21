@@ -12,10 +12,13 @@ import java.util.List;
 
 public class CharacterController {
     private final HttpClient client = HttpClient.newHttpClient();
+    private final CharacterService characterService;
+    public CharacterController() {
+        this.characterService = new CharacterService();
+    }
 
     public void getAll() {
         try {
-            CharacterService characterService = new CharacterService();
             String requestURL = "https://rickandmortyapi.com/api/character";
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(requestURL))
@@ -23,7 +26,7 @@ public class CharacterController {
             HttpResponse<String> response = client
                     .send(request, HttpResponse.BodyHandlers.ofString());
             String json = response.body();
-            List<Character> characterList = characterService.createList(json);
+            List<Character> characterList = characterService.mountList(json);
             characterService.displayAll(characterList);
         } catch(IOException | InterruptedException e) {
             System.out.println("Ocorreu um erro:");
@@ -34,7 +37,6 @@ public class CharacterController {
 
     public void getById(int characterId) {
         try {
-            CharacterService characterService = new CharacterService();
             String requestURL = "https://rickandmortyapi.com/api/character" + "/" + characterId;
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(requestURL))
@@ -42,7 +44,7 @@ public class CharacterController {
             HttpResponse<String> response = client
                     .send(request, HttpResponse.BodyHandlers.ofString());
             String json = response.body();
-            Character character = characterService.createCharacter(json);
+            Character character = characterService.mountCharacter(json);
             characterService.displayCharacter(character);
         } catch (IOException | InterruptedException e) {
             System.out.println("Ocorreu um erro:");

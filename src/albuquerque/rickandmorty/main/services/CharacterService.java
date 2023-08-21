@@ -12,7 +12,7 @@ import java.util.List;
 public class CharacterService {
     
     private final Gson gson = new Gson();
-    public List<Character> createList(String json) {
+    public List<Character> mountList(String json) {
         List<Character> characterList = new ArrayList<>();
         JsonObject jsonObject = gson.fromJson(json, JsonObject.class);
         JsonArray resultsArray = jsonObject.getAsJsonArray("results");
@@ -23,7 +23,7 @@ public class CharacterService {
         return characterList;
     }
 
-    public Character createCharacter(String json) {
+    public Character mountCharacter(String json) {
         return gson.fromJson(json, Character.class);
     }
     public void displayCharacter(Character character) {
