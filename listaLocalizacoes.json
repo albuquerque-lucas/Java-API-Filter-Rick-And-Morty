@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "name": "Earth (C-137)",
+    "type": "Planet",
+    "dimension": "Dimension C-137",
+    "url": "https://rickandmortyapi.com/api/location/1"
+  },
+  {
+    "id": 2,
+    "name": "Abadango",
+    "type": "Cluster",
+    "dimension": "unknown",
+    "url": "https://rickandmortyapi.com/api/location/2"
+  },
+  {
+    "id": 3,
+    "name": "Citadel of Ricks",
+    "type": "Space station",
+    "dimension": "unknown",
+    "url": "https://rickandmortyapi.com/api/location/3"
+  },
+  {
+    "id": 4,
+    "name": "Worldender\u0027s lair",
+    "type": "Planet",
+    "dimension": "unknown",
+    "url": "https://rickandmortyapi.com/api/location/4"
+  },
+  {
+    "id": 5,
+    "name": "Anatomy Park",
+    "type": "Microverse",
+    "dimension": "Dimension C-137",
+    "url": "https://rickandmortyapi.com/api/location/5"
+  },
+  {
+    "id": 6,
+    "name": "Interdimensional Cable",
+    "type": "TV",
+    "dimension": "unknown",
+    "url": "https://rickandmortyapi.com/api/location/6"
+  },
+  {
+    "id": 7,
+    "name": "Immortality Field Resort",
+    "type": "Resort",
+    "dimension": "unknown",
+    "url": "https://rickandmortyapi.com/api/location/7"
+  },
+  {
+    "id": 8,
+    "name": "Post-Apocalyptic Earth",
+    "type": "Planet",
+    "dimension": "Post-Apocalyptic Dimension",
+    "url": "https://rickandmortyapi.com/api/location/8"
+  },
+  {
+    "id": 9,
+    "name": "Purge Planet",
+    "type": "Planet",
+    "dimension": "Replacement Dimension",
+    "url": "https://rickandmortyapi.com/api/location/9"
+  },
+  {
+    "id": 10,
+    "name": "Venzenulon 7",
+    "type": "Planet",
+    "dimension": "unknown",
+    "url": "https://rickandmortyapi.com/api/location/10"
+  },
+  {
+    "id": 11,
+    "name": "Bepis 9",
+    "type": "Planet",
+    "dimension": "unknown",
+    "url": "https://rickandmortyapi.com/api/location/11"
+  },
+  {
+    "id": 12,
+    "name": "Cronenberg Earth",
+    "type": "Planet",
+    "dimension": "Cronenberg Dimension",
+    "url": "https://rickandmortyapi.com/api/location/12"
+  },
+  {
+    "id": 13,
+    "name": "Nuptia 4",
+    "type": "Planet",
+    "dimension": "unknown",
+    "url": "https://rickandmortyapi.com/api/location/13"
+  },
+  {
+    "id": 14,
+    "name": "Giant\u0027s Town",
+    "type": "Fantasy town",
+    "dimension": "Fantasy Dimension",
+    "url": "https://rickandmortyapi.com/api/location/14"
+  },
+  {
+    "id": 15,
+    "name": "Bird World",
+    "type": "Planet",
+    "dimension": "unknown",
+    "url": "https://rickandmortyapi.com/api/location/15"
+  },
+  {
+    "id": 16,
+    "name": "St. Gloopy Noops Hospital",
+    "type": "Space station",
+    "dimension": "unknown",
+    "url": "https://rickandmortyapi.com/api/location/16"
+  },
+  {
+    "id": 17,
+    "name": "Earth (5-126)",
+    "type": "Planet",
+    "dimension": "Dimension 5-126",
+    "url": "https://rickandmortyapi.com/api/location/17"
+  },
+  {
+    "id": 18,
+    "name": "Mr. Goldenfold\u0027s dream",
+    "type": "Dream",
+    "dimension": "Dimension C-137",
+    "url": "https://rickandmortyapi.com/api/location/18"
+  },
+  {
+    "id": 19,
+    "name": "Gromflom Prime",
+    "type": "Planet",
+    "dimension": "Replacement Dimension",
+    "url": "https://rickandmortyapi.com/api/location/19"
+  },
+  {
+    "id": 20,
+    "name": "Earth (Replacement Dimension)",
+    "type": "Planet",
+    "dimension": "Replacement Dimension",
+    "url": "https://rickandmortyapi.com/api/location/20"
+  }
+]

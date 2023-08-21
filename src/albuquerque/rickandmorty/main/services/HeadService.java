@@ -20,11 +20,17 @@ public abstract class HeadService {
 
     public void displayAll(List<?> itemList) {
         try {
-            FileWriter writer = new FileWriter(getFileName());
+            String json = gsonWithPrettyPrinting.toJson(itemList);
+            String filename = getFileName();
+            if (itemList.size() < 2) {
+                filename = "singleCharacter.json";
+            }
+            FileWriter writer = new FileWriter(filename);
+            writer.write(json);
             for (Object item : itemList) {
                 displayDetails(item);
             }
-            System.out.println("Um arquivo foi gerado contendo todas as informações.");
+            System.out.println("Um arquivo foi gerado contendo todas as informações pesquisadas.");
             writer.close();
         } catch (IOException e) {
             e.getMessage();
