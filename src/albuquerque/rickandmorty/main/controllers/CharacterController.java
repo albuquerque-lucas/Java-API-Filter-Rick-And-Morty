@@ -8,6 +8,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CharacterController {
@@ -44,8 +45,8 @@ public class CharacterController {
             HttpResponse<String> response = client
                     .send(request, HttpResponse.BodyHandlers.ofString());
             String json = response.body();
-            Character character = characterService.mountCharacter(json);
-            characterService.displayCharacter(character);
+            List<Character> character = characterService.mountCharacter(json);
+            characterService.displayAll(character);
         } catch (IOException | InterruptedException e) {
             System.out.println("Ocorreu um erro:");
             System.out.println(e.getMessage());

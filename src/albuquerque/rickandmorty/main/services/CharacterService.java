@@ -8,6 +8,7 @@ import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class CharacterService {
     
@@ -23,16 +24,11 @@ public class CharacterService {
         return characterList;
     }
 
-    public Character mountCharacter(String json) {
-        return gson.fromJson(json, Character.class);
-    }
-    public void displayCharacter(Character character) {
-            System.out.println("Nome: " + character.getName());
-            System.out.println("Especie: " + character.getSpecies());
-            System.out.println("Genero: " + character.getGender());
-            System.out.println("Status: " + character.getStatus());
-            System.out.println("Imagem: " + character.getImage());
-            System.out.println("#################################");
+    public List<Character> mountCharacter(String json) {
+        List<Character> characterList = new ArrayList<>();
+        Character character = gson.fromJson(json, Character.class);
+        characterList.add(character);
+        return characterList;
     }
     public void displayAll(List<Character> characterList) {
         for (Character character : characterList) {
